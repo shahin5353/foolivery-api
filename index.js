@@ -31,7 +31,7 @@ app.get('/item/:id', (req, res) => {
     const itemId = req.params.id;
     client.connect(err => {
         const collection = client.db("foolivery").collection("items");
-        collection.find({ itemId }).toArray((err, documents) => {
+        collection.find({ _id: ObjectId(itemId) }).toArray((err, documents) => {
             if (err) {
                 console.log(err);
                 res.status(500).send({ message: err })
