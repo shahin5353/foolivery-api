@@ -12,7 +12,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true,useUnifiedTopology: 
 app.use(cors())
 app.use(bodyParser.json())
 
-router.get("/", (req, res) => {
+app.get("/", (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Max-Age", "1800");
