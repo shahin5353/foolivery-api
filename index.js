@@ -100,7 +100,7 @@ app.post('/itemsById', (req, res) => {
 });
 
 app.post('/addItem', (req, res) => {
-    const items = req.body
+    const items = req.body;
     client.connect(err => {
         const collection = client.db("foolivery").collection("items");
         collection.insert(items, (err, result) => {
